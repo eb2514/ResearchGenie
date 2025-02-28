@@ -87,7 +87,7 @@ def query_chroma(query):
     # Initialize the Chroma store
     embedding_model = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2", 
-    model_kwargs={"device":"cpu"}
+    model_kwargs={"device":"cuda"}
     )
     chroma_store = Chroma(persist_directory="chroma_db_v4", embedding_function=embedding_model, collection_name="my_collection")
 
