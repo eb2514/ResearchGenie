@@ -1,4 +1,5 @@
 langchain-community==0.3.18
 transformers==4.49.0
 torch==2.6.0 -f https://download.pytorch.org/whl/torch_stable.html
+sentence-transformers==3.4.1
 
