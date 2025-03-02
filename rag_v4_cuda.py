@@ -5,9 +5,6 @@ from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 import os
 import time
 
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 def remove_duplicate_results(results):
     unique_results = []
