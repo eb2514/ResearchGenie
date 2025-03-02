@@ -9,6 +9,17 @@ __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
+def remove_duplicate_results(results):
+    unique_results = []
+    seen = set()
+    for result in results:
+        # Use page_content as the key to check for duplicates.
+        content = result.metadata['source'].strip()
+        if content not in seen:
+            seen.add(content)
+            unique_results.append(result)
+    return unique_results
+    
 def query_chroma(query):
     # Initialize the Chroma store
     embedding_model = HuggingFaceEmbeddings(
