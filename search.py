@@ -32,10 +32,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-
 def send_query(prompt):
     with st.spinner("Searching..."):
         query = query_chroma(prompt)
