@@ -1,9 +1,9 @@
 import streamlit as st
 import time
-#from rag_v4_cuda import query_chroma
-#from concurrent.futures import ThreadPoolExecutor
-#import base64
-#from langchain_community.chat_models import ChatOllama
+from rag_v4_cuda import query_chroma
+from concurrent.futures import ThreadPoolExecutor
+import base64
+from langchain_community.chat_models import ChatOllama
 
 
 
@@ -34,22 +34,22 @@ st.markdown(
 
 def send_query(prompt):
     with st.spinner("Searching..."):
-        # query = query_chroma(prompt)
-        # #response = f"""**{query.page_content}**  \n """
-        # response =""
-        # for document in query:
-        #     response += create_response(document)
-        return "A"             
+        query = query_chroma(prompt)
+        #response = f"""**{query.page_content}**  \n """
+        response =""
+        for document in query:
+            response += create_response(document)
+        return response             
 
-# def create_response(document):
-#     file_path = document.metadata['source']
-#     llm = ChatOllama(model="llama3.2:3b")
-#     result = llm.invoke(f"Summarize this in 100 words or less in bullet points with a newline after each, do not include introduction: {document.page_content}")
-#     with open(file_path, "rb") as file:
-#         file_bytes = file.read() 
-#         pdf_base64 = base64.b64encode(file_bytes).decode("utf-8")  
-#         response = f"""  \n *{result.content}*  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
-#     return response
+def create_response(document):
+    file_path = document.metadata['source']
+    llm = ChatOllama(model="llama3.2:3b")
+    result = llm.invoke(f"Summarize this in 100 words or less in bullet points with a newline after each, do not include introduction: {document.page_content}")
+    with open(file_path, "rb") as file:
+        file_bytes = file.read() 
+        pdf_base64 = base64.b64encode(file_bytes).decode("utf-8")  
+        response = f"""  \n *{result.content}*  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
+    return response
     
 if "chats" not in st.session_state:
     st.session_state.chats = {"Default Chat": []}
