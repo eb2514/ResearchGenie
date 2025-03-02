@@ -5,6 +5,10 @@ from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 import os
 import time
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 def query_chroma(query):
     # Initialize the Chroma store
     embedding_model = HuggingFaceEmbeddings(
