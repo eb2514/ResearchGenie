@@ -4,4 +4,4 @@ torch==2.6.0 -f https://download.pytorch.org/whl/torch_stable.html
 sentence-transformers==3.4.1
 streamlit==1.42.2
 chromadb==0.6.3
-pysqlite3-binary>=3.4.6
+
