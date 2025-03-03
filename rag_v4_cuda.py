@@ -26,8 +26,11 @@ def query_chroma(query):
     # Initialize the Chroma store
     embedding_model = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2")
+    print("Communicating with server")
     client = chromadb.HttpClient(host=st.secrets['IP_ADDRESS'], port=8000)
+    print("Communicating with server")
     chroma_store = Chroma(client=client, embedding_function=embedding_model, collection_name="my_collection")
+    print("Communicating with server")
 
     # Query the database
     print(f"Querying for: '{query}'")
