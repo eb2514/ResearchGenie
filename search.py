@@ -36,10 +36,10 @@ def send_query(prompt):
     with st.spinner("Searching..."):
         query = query_chroma(prompt)
         #response = f"""**{query.page_content}**  \n """
-        response =""
-        for document in query:
-            response += create_response(document)
-        return query             
+        response ="A"
+        # for document in query:
+        #     response += create_response(document)
+        return response             
 
 def create_response(document):
     file_path = document.metadata['source']
