@@ -37,9 +37,9 @@ def send_query(prompt):
         query = query_chroma(prompt)
         #response = f"""**{query.page_content}**  \n """
         response =""
-        for document in query:
-            response += create_response(document)
-        return response             
+        #for document in query:
+        #    response += create_response(document)
+        return query             
 
 def create_response(document):
     file_path = document.metadata['source']
