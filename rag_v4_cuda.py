@@ -5,7 +5,7 @@ from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 import os
 import time
 import chromadb
-import streamlit as st
+#import streamlit as st
 
 __import__('pysqlite3')
 import sys
@@ -24,18 +24,19 @@ def remove_duplicate_results(results):
     
 def query_chroma(query):
     # Initialize the Chroma store
-    embedding_model = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2")
+   # embedding_model = HuggingFaceEmbeddings(
+   # model_name="sentence-transformers/all-MiniLM-L6-v2")
     print("Communicating with server")
-    client = chromadb.HttpClient(host=st.secrets['IP_ADDRESS'], port=8000)
+    #client = chromadb.HttpClient(host=st.secrets['IP_ADDRESS'], port=8000)
     print("Communicating with server")
-    chroma_store = Chroma(client=client, embedding_function=embedding_model, collection_name="my_collection")
+    #chroma_store = Chroma(client=client, embedding_function=embedding_model, collection_name="my_collection")
     print("Communicating with server")
 
     # Query the database
     print(f"Querying for: '{query}'")
-    results = chroma_store.similarity_search(query, k=3)
-    unique_results = remove_duplicate_results(results)
+    #results = chroma_store.similarity_search(query, k=3)
+    #unique_results = remove_duplicate_results(results)
+    unique_results = "A"
     return unique_results
     # for i, result in enumerate(unique_results, start=1):
     #     #print(results)
