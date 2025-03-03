@@ -24,8 +24,8 @@ def remove_duplicate_results(results):
     
 def query_chroma(query):
     # Initialize the Chroma store
-   # embedding_model = HuggingFaceEmbeddings(
-   # model_name="sentence-transformers/all-MiniLM-L6-v2")
+    embedding_model = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2")
     print("Communicating with server")
     #client = chromadb.HttpClient(host=st.secrets['IP_ADDRESS'], port=8000)
     print("Communicating with server")
