@@ -2,9 +2,11 @@
 
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
+from langchain_community.chat_models import ChatOllama
 import os
 import time
-#import chromadb
+import chromadb
+import base64
 #import streamlit as st
 
 __import__('pysqlite3')
