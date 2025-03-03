@@ -5,7 +5,9 @@ from concurrent.futures import ThreadPoolExecutor
 #import base64
 #from langchain_community.chat_models import ChatOllama
 
-
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 st.markdown(
