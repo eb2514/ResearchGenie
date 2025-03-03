@@ -28,12 +28,13 @@ def create_response(unique_results):
     response = ""
     for document in unique_results:    
         file_path = document.metadata['source']
-        llm = ChatOllama(model="llama3.2:3b")
-        result = llm.invoke(f"Summarize this in 100 words or less in bullet points with a newline after each, do not include introduction: {document.page_content}")
+        #llm = ChatOllama(model="llama3.2:3b")
+        #result = llm.invoke(f"Summarize this in 100 words or less in bullet points with a newline after each, do not include introduction: {document.page_content}")
         with open(file_path, "rb") as file:
             file_bytes = file.read() 
             pdf_base64 = base64.b64encode(file_bytes).decode("utf-8")  
-            response += f"""  \n *{result.content}*  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
+            #response += f"""  \n *{result.content}*  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
+            response += f"""  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
     return response
     
 def query_chroma(query):
