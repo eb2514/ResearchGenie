@@ -2,8 +2,8 @@ import streamlit as st
 import time
 from rag_v4_cuda import query_chroma
 from concurrent.futures import ThreadPoolExecutor
-import base64
-from langchain_community.chat_models import ChatOllama
+#import base64
+#from langchain_community.chat_models import ChatOllama
 
 
 
