@@ -7,7 +7,7 @@ import os
 import time
 import chromadb
 import base64
-#import streamlit as st
+import streamlit as st
 
 __import__('pysqlite3')
 import sys
