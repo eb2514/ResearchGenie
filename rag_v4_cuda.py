@@ -4,6 +4,8 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 import os
 import time
+import chromadb
+import streamlit as st
 
 __import__('pysqlite3')
 import sys
@@ -24,7 +26,8 @@ def query_chroma(query):
     # Initialize the Chroma store
     embedding_model = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2")
-    chroma_store = Chroma(persist_directory="chroma_db_v4", embedding_function=embedding_model, collection_name="my_collection")
+    client = chromadb.HttpClient(host=st.secrets['IP_ADDRESS'], port=8000)
+    chroma_store = Chroma(client=client, embedding_function=embedding_model, collection_name="my_collection")
 
     # Query the database
     print(f"Querying for: '{query}'")
