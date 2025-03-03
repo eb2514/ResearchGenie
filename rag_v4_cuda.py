@@ -36,7 +36,7 @@ def query_chroma(query):
     print(f"Querying for: '{query}'")
     #results = chroma_store.similarity_search(query, k=3)
     #unique_results = remove_duplicate_results(results)
-    unique_results = "A"
+    unique_results = ["A","B"]
     return unique_results
     # for i, result in enumerate(unique_results, start=1):
     #     #print(results)
