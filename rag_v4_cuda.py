@@ -43,7 +43,7 @@ def query_chroma(query):
     embedding_model = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2")
     print("Communicating with server")
-    client = chromadb.HttpClient(host=st.secrets['IP_ADDRESS'], port=8000)
+    client = chromadb.HttpClient(host=st.secrets['ADDRRESS'], port=8000, ssl=True)
     print("Communicating with server")
     chroma_store = Chroma(client=client, embedding_function=embedding_model, collection_name="my_collection")
     print("Communicating with server")
