@@ -42,6 +42,7 @@ def create_response(unique_results):
     for document in unique_results:
         file_path = document.metadata['source']
         file_name = os.path.basename(file_path)
+        st.write(file_name)
         file_url = f'{file_endpoint}{file_path}'
         response = requests.get(file_url)
         if response.status_code == 200:
