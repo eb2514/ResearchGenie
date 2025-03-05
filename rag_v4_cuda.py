@@ -44,9 +44,9 @@ def create_response(unique_results):
         file_name = os.path.basename(file_path).replace('\\', '/')
         file_url = f'{file_endpoint}{file_name}'
         st.write(file_url)
-        response = requests.get(file_url)
-        if response.status_code == 200:
-            pdf_base64 = base64.b64encode(response.content).decode("utf-8")
+        get_request = requests.get(file_url)
+        if get_request.status_code == 200:
+            pdf_base64 = base64.b64encode(get_request.content).decode("utf-8")
             response += f"""  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
     return response
     
