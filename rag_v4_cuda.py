@@ -41,7 +41,7 @@ def create_response(unique_results):
     file_endpoint = f"{st.secrets['file_endpoint']}/get_file/"
     for document in unique_results:
         file_path = document.metadata['source']
-        print(file_path)
+        file_name = os.path.basename(file_path)
         file_url = f'{file_endpoint}{file_path}'
         response = requests.get(file_url)
         if response.status_code == 200:
