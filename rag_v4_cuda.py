@@ -41,7 +41,6 @@ def create_response(unique_results):
     file_endpoint = f"{st.secrets['file_endpoint']}/get_file/"
     for document in unique_results:
         file_path = document.metadata['source']
-        pdf_base64 = base64.b64encode(file_bytes).decode("utf-8")
         file_url = f'{file_endpoint}{file_path}'
         response = requests.get(file_url)
         if response.status_code == 200:
