@@ -38,7 +38,7 @@ def remove_duplicate_results(results):
 
 def create_response(unique_results):
     response = ""
-    file_endpoint = st.secrets['file_endpoint']
+    file_endpoint = f"{st.secrets['file_endpoint']}/get_file/"
     for document in unique_results:
         file_path = document.metadata['source']
         pdf_base64 = base64.b64encode(file_bytes).decode("utf-8")
