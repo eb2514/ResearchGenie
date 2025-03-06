@@ -46,10 +46,13 @@ def create_response(unique_results):
         file_url = f'{file_endpoint}{file_name}'
         st.write(file_url)
         get_request = requests.get(file_url, add_headers)
+        with open('file.pdf', 'wb') as f:
+                f.write(response.content)
         if get_request.status_code == 200:
             #pdf_base64 = base64.b64encode(get_request.content).decode("utf-8")
             #response += f"""  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
-            response += f"""  \n <iframe src="https://806a-2607-fea8-3fb2-3800-71b7-4f42-4d2a-805f.ngrok-free.app/get_file/Pubmed/epj-10-6215.PMC5853996.pdf#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
+            #response += f"""  \n <iframe src="https://806a-2607-fea8-3fb2-3800-71b7-4f42-4d2a-805f.ngrok-free.app/get_file/Pubmed/epj-10-6215.PMC5853996.pdf#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
+            response += f""" <embed src="https://806a-2607-fea8-3fb2-3800-71b7-4f42-4d2a-805f.ngrok-free.app/get_file/Pubmed/epj-10-6215.PMC5853996.pdf" width="800" height="800"> """
             
     return response
     
