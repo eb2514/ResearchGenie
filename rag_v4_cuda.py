@@ -47,9 +47,8 @@ def create_response(unique_results):
         st.write(file_url)
         get_request = requests.get(file_url, add_headers)
         if get_request.status_code == 200:
-            #pdf_base64 = base64.b64encode(get_request.content).decode("utf-8")
-            #response += f"""  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
-            response += f"""  \n <iframe src="data:application/pdf;base64,{get_request.content.decode("utf-8")}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
+            pdf_base64 = base64.b64encode(get_request.content) #.decode("utf-8")
+            response += f"""  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
     return response
     
 def query_chroma(query):
