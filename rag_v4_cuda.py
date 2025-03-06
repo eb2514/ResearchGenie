@@ -39,12 +39,13 @@ def remove_duplicate_results(results):
 def create_response(unique_results):
     response = ""
     file_endpoint = f"{st.secrets['file_endpoint']}/get_file/"
+    add_headers = {'ngrok-skip-browser-warning': "1"}
     for document in unique_results:
         file_path = document.metadata['source']
         file_name = os.path.basename(file_path).replace('\\', '/')
         file_url = f'{file_endpoint}{file_name}'
         st.write(file_url)
-        get_request = requests.get(file_url)
+        get_request = requests.get(file_url, add_headers)
         if get_request.status_code == 200:
             pdf_base64 = base64.b64encode(get_request.content).decode("utf-8")
             response += f"""  \n <iframe src="data:application/pdf;base64,{pdf_base64}#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
