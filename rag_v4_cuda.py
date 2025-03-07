@@ -39,7 +39,7 @@ def remove_duplicate_results(results):
 
 def create_response(unique_results):
     response = ""
-    file_endpoint = f"{st.secrets['file_endpoint']}/get_file/"
+    file_endpoint = f"{st.secrets['file_endpoint']}"
     add_headers = {'ngrok-skip-browser-warning': "1"}
     for document in unique_results:
         file_path = document.metadata['source']
