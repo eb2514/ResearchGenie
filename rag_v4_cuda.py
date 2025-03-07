@@ -55,7 +55,7 @@ def create_response(unique_results):
             #response += f"""  \n <iframe src="https://806a-2607-fea8-3fb2-3800-71b7-4f42-4d2a-805f.ngrok-free.app/get_file/Pubmed/epj-10-6215.PMC5853996.pdf#page={document.metadata["page"]}" width="80%" height="1000px"></iframe>  \n """
         response += f""" <embed src="https://806a-2607-fea8-3fb2-3800-71b7-4f42-4d2a-805f.ngrok-free.app/get_file/Pubmed/epj-10-6215.PMC5853996.pdf" width="800" height="800" sandbox="allow-scripts allow-same-origin"> """
             
-    return response
+    return "Works"
     
 def query_chroma(query):
     # Initialize the Chroma store
