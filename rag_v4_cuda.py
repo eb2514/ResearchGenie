@@ -46,7 +46,7 @@ def create_response(unique_results):
         file_name = os.path.basename(file_path).replace('\\', '/')
         file_url = f'{file_endpoint}{file_name}'
         pdf = requests.get("https://965f-2607-fea8-3fb2-3800-c150-fb9c-699f-8291.ngrok-free.app/00495-2023.PMC10658611.pdf")
-        pdf_viewer(pdf.content, height=1000)
+        pdf_viewer(pdf.content, height=1000, width=600)
         #st.write(file_url)
         #get_request = requests.get(file_url, add_headers)
         #if get_request.status_code == 200:
