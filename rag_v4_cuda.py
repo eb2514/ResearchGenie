@@ -48,6 +48,7 @@ def create_response(unique_results):
         #st.write(file_url)
         llm = ChatOllama(model="llama3.2:3b")
         ai_summarizer = llm.invoke(f"Summarize this in 100 words or less in bullet points with a newline after each, do not include introduction: {document.page_content}")
+        st.write(ai_summarizer)
         get_request = requests.get(file_url, add_headers)
         if get_request.status_code == 200:
             pdf = requests.get(file_url)
