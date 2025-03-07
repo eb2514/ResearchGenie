@@ -45,7 +45,7 @@ def create_response(unique_results):
         file_path = document.metadata['source']
         file_name = os.path.basename(file_path).replace('\\', '/')
         file_url = f'{file_endpoint}{file_name}'
-        #st.write(file_url)
+        st.write(file_url)
         get_request = requests.get(file_url, add_headers)
         if get_request.status_code == 200:
             pdf = requests.get(file_url)
