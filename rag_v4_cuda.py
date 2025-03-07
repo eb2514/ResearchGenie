@@ -45,7 +45,8 @@ def create_response(unique_results):
         file_path = document.metadata['source']
         file_name = os.path.basename(file_path).replace('\\', '/')
         file_url = f'{file_endpoint}{file_name}'
-        pdf_viewer("https://806a-2607-fea8-3fb2-3800-71b7-4f42-4d2a-805f.ngrok-free.app/get_file/Pubmed/epj-10-6215.PMC5853996.pdf"")
+        pdf = requests.get("https://965f-2607-fea8-3fb2-3800-c150-fb9c-699f-8291.ngrok-free.app/00495-2023.PMC10658611.pdf")
+        pdf_viewer(pdf.content, height=1000)
         #st.write(file_url)
         #get_request = requests.get(file_url, add_headers)
         #if get_request.status_code == 200:
