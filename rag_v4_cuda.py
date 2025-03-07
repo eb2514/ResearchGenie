@@ -45,7 +45,9 @@ def create_response(unique_results):
         file_path = document.metadata['source']
         file_name = os.path.basename(file_path).replace("Pubmed",'').replace('\\', '/')
         file_url = f'{file_endpoint}{file_name}'
-        st.write(file_url)
+        #st.write(file_url)
+        llm = ChatOllama(model="llama3.2:3b")
+        ai_summarizer = llm.invoke(f"Summarize this in 100 words or less in bullet points with a newline after each, do not include introduction: {document.page_content}")
         get_request = requests.get(file_url, add_headers)
         if get_request.status_code == 200:
             pdf = requests.get(file_url)
