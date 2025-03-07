@@ -43,7 +43,7 @@ def create_response(unique_results):
     add_headers = {'ngrok-skip-browser-warning': "1"}
     for document in unique_results:
         file_path = document.metadata['source']
-        file_name = os.path.basename(file_path).replace('\\', '/')
+        file_name = os.path.basename(file_path).replace("Pubmed",'').replace('\\', '/')
         file_url = f'{file_endpoint}{file_name}'
         st.write(file_url)
         get_request = requests.get(file_url, add_headers)
