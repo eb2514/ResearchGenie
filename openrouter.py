@@ -41,7 +41,7 @@ def get_response(content):
     )
     response = response.json()
     #print(response["choices"]["message"]["content"])
-    return response["choices"]["message"]["content"]
+    return response["choices"][0]["message"]["content"]
     
 
 SYSTEM_PROMPT="""
