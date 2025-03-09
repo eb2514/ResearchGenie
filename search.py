@@ -109,8 +109,10 @@ if prompt := st.chat_input("Search for something"):
     st.session_state.chats[st.session_state.current_chat].append({"role":"user", "content":prompt})
     with st.chat_message("assistant"):
         response_list = send_query(prompt)
-        for i in range(0, len(response_list),2)
-        st.markdown(response_list[i], unsafe_allow_html=True)
+        for i in range(0, len(response_list),2):
+            st.markdown(response_list[i], unsafe_allow_html=True)
+            if i + 1 < len(response_list):  # Check if the next index is valid
+                pdf_viewer(response_list[i+1], height=800, width=600, resolution_boost=2)
         st.session_state.chats[st.session_state.current_chat].append({"role": "assistant", "content": response_list})
         
 #How does Caffeine Effect vision?
