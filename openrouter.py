@@ -77,8 +77,10 @@ Example Structure:
     Follow-up: Connecting the ideas from the pages and answering the question.
     Conclusion  
 
-Ensure clarity, coherence, and precision in all responses. Do not generate any additional titles or headings for the sections.
+DO NOT USE THE EXAMPLE AS TITLES FOR YOUR WORK!! THESE ARE JUST TO HELP YOU UNDERSTAND!!
 Example: DO NOT INCLUDE: 'Summary of Page 1' or 'Follow-up of Page 1'
+Ensure clarity, coherence, and precision in all responses. 
+
 
 
 """
