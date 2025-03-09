@@ -47,7 +47,7 @@ def create_response(unique_results):
             # st.write(file_url)
     response += get_response(send_context)
     response = response.split("<----------DELIMITER---------->")
-    for i in range(0,len(response)+len(unique_results), 2):
+    for i in range(0,len(response)):
         try:
             crafted_response.append(response[i])
             crafted_response.append(pdf_list[i])
