@@ -70,7 +70,7 @@ def query_chroma(query):
 
     # Query the database
     print(f"Querying for: '{query}'")
-    results = chroma_store.similarity_search(query, k=1)
+    results = chroma_store.similarity_search(query, k=2)
     unique_results = remove_duplicate_results(results)
     response = create_response(unique_results)
     return response
