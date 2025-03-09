@@ -54,7 +54,7 @@ def create_response(unique_results):
             pdf = requests.get(file_url)
             pdf_viewer(pdf.content, height=800, width=600, resolution_boost=2)
             st.write(file_url)
-    get_response(send_context)
+    response += get_response(send_context)
         
     return response
     
