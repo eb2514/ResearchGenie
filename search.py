@@ -108,8 +108,9 @@ if prompt := st.chat_input("Search for something"):
     st.chat_message("user").markdown(prompt)
     st.session_state.chats[st.session_state.current_chat].append({"role":"user", "content":prompt})
     with st.chat_message("assistant"):
-        response_text = send_query(prompt)
-        st.markdown(response_text, unsafe_allow_html=True)
-        st.session_state.chats[st.session_state.current_chat].append({"role": "assistant", "content": response_text})
+        response_list = send_query(prompt)
+        for i in range(0, len(response_list),2)
+        st.markdown(response_list[i], unsafe_allow_html=True)
+        st.session_state.chats[st.session_state.current_chat].append({"role": "assistant", "content": response_list})
         
 #How does Caffeine Effect vision?
