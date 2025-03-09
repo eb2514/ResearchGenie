@@ -44,9 +44,11 @@ def create_response(unique_results):
             pdf = requests.get(file_url)
             pdf_list.append(pdf.content)
             # pdf_viewer(pdf.content, height=800, width=600, resolution_boost=2)
-            # st.write(file_url)
+            st.write(file_url)
     response += get_response(send_context)
     response = response.split("<----------DELIMITER---------->")
+    st.write(len(response))
+    st.write(len(pdf_list))
     for i in range(0,len(response)):
         try:
             crafted_response.append(response[i])
