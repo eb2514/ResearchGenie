@@ -82,11 +82,3 @@ Example: DO NOT INCLUDE: 'Summary of Page 1' or 'Follow-up of Page 1'
 
 
 """
-
-# Define the request parameters
-
-
-
-
-print("Status Code:", response.status_code)
-print("\nResponse:")
