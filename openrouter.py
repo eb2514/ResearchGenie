@@ -39,8 +39,10 @@ def get_response(content):
     },
     json=payload  # Use "json=" instead of "data=json.dumps()" for clarity
     )
+    print(response)
     response = response.json()
     #print(response["choices"]["message"]["content"])
+    print(response["usage"])
     return response["choices"][0]["message"]["content"]
     
 
