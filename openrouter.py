@@ -3,7 +3,7 @@ import json
 import streamlit as st
 
 # Replace with your actual values
-OPENROUTER_API_KEY = st.secrets("OPENROUTER")
+OPENROUTER_API_KEY = st.secrets["OPENROUTER"]
 # YOUR_SITE_URL = "YOUR_SITE_URL"  # e.g., "https://yourwebsite.com"
 # YOUR_SITE_NAME = "YOUR_SITE_NAME"  # e.g., "MyChatApp"
 
