@@ -39,6 +39,8 @@ def remove_duplicate_results(results):
 #     return response
 
 def create_response(unique_results):
+    crafted_response=[]
+    pdf_list = []
     response = ""
     send_context =""
     file_endpoint = f"{st.secrets['file_endpoint']}"
@@ -46,17 +48,24 @@ def create_response(unique_results):
     for document in unique_results:
         file_path = document.metadata['source']
         send_context += document.page_content
-        send_context += "\n <----------DELIMITER---------->"
+        send_context += "\n <----------DELIMITER----------> \n"
         file_name = os.path.basename(file_path).replace("Pubmed",'').replace('\\', '/')
         file_url = f'{file_endpoint}{file_name}'
         get_request = requests.get(file_url, add_headers)
         if get_request.status_code == 200:
             pdf = requests.get(file_url)
-            pdf_viewer(pdf.content, height=800, width=600, resolution_boost=2)
-            st.write(file_url)
+            pdf_list.append(pdf)
+            # pdf_viewer(pdf.content, height=800, width=600, resolution_boost=2)
+            # st.write(file_url)
     response += get_response(send_context)
-        
-    return response
+    response = response.split("<----------DELIMITER---------->")
+    for i in range(0,len(response)+len(unique_results), 2):
+        try:
+            crafted_response.append(response[i])
+            crafted_response.append(pdf_list[i])
+        except IndexError:
+            break
+    return crafted_response
     
 def query_chroma(query):
     # Initialize the Chroma store
