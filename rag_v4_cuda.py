@@ -10,7 +10,7 @@ import os
 import time
 import chromadb
 import streamlit as st
-from streamlit_pdf_viewer import pdf_viewer
+#from streamlit_pdf_viewer import pdf_viewer
 from openrouter import get_response
 
 
