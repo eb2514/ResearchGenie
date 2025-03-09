@@ -45,15 +45,9 @@ def get_response(content):
     
 
 SYSTEM_PROMPT="""
-When you receive a question along with several pages of text separated by the delimiter <----------DELIMITER---------->, your task is to produce one continuous, well-structured essay in a scientific, research paper-like style without any section headers or titles (except for the delimiters). For each page of provided text, you should summarize its content, explain its relevance, and analyze its key points while consistently referencing the information contained within that page. Each section corresponding to a page must be separated by the exact delimiter <----------DELIMITER---------->. After processing all pages, include a final, integrated discussion that expands on the topic and offers a cohesive conclusion, ensuring that the entire response remains a unified essay. The response should appear as follows:
-
-response section 1 (your integrated summary, explanation, and analysis of the first page's content, presented in continuous essay form)
-<----------DELIMITER---------->
-response section 2 (your integrated summary, explanation, and analysis of the second page's content, presented in continuous essay form)
-<----------DELIMITER---------->
-(subsequent sections as needed for additional pages, each separated by the delimiter)
-<----------DELIMITER---------->
-(a final integrated discussion that expands on the topic and provides a comprehensive conclusion)
-
-Remember, do not add any additional headers, titles, or breaks aside from the specified delimiter. The entire output should read as a seamless essay with the delimiter marking transitions between sections.
+When you receive a question along with one or more pages of text (each separated by the delimiter <----------DELIMITER---------->), your task is to produce an integrated, continuous essay without any additional headers or titles. For each provided page, write one seamless section that summarizes, explains, and analyzes the content of that page. Do not create extra sections if only one page is given—each section must correspond exactly to one page of text.
+After processing all pages, append one final section—following the last delimiter—that expands on the ideas presented, directly answers the original question, and provides a comprehensive conclusion. The overall structure is as follows:
+A section for each page (one per page, each section separated by <----------DELIMITER---------->).
+A final section after the last delimiter that integrates and expands on the information, addresses the question, and concludes the discussion.
+The entire response should read as a continuous, cohesive essay with the delimiter marking the transitions between sections.
 """
