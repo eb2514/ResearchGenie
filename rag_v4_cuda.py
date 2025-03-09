@@ -42,7 +42,7 @@ def create_response(unique_results):
         get_request = requests.get(file_url, add_headers)
         if get_request.status_code == 200:
             pdf = requests.get(file_url)
-            pdf_list.append(pdf)
+            pdf_list.append(pdf.content)
             # pdf_viewer(pdf.content, height=800, width=600, resolution_boost=2)
             # st.write(file_url)
     response += get_response(send_context)
