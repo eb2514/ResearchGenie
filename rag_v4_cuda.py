@@ -45,7 +45,7 @@ def create_response(unique_results):
             pdf_list.append(pdf.content)
             # pdf_viewer(pdf.content, height=800, width=600, resolution_boost=2)
             st.write(file_url)
-    response += get_response(send_context)
+    response += get_response(query, send_context)
     response = response.split("<----------DELIMITER---------->")
     # st.write(len(response))
     # st.write(len(pdf_list))
@@ -71,5 +71,5 @@ def query_chroma(query):
     print(f"Querying for: '{query}'")
     results = chroma_store.similarity_search(query, k=2)
     unique_results = remove_duplicate_results(results)
-    response = create_response(unique_results)
+    response = create_response(query, unique_results)
     return response
