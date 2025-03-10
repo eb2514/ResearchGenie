@@ -69,7 +69,11 @@ def query_chroma(query):
 
     # Query the database
     print(f"Querying for: '{query}'")
-    results = chroma_store.similarity_search(query, k=2)
-    unique_results = remove_duplicate_results(results)
-    response = create_response(query, unique_results)
+    results = chroma_store.similarity_search_with_relevance_scores(query, k=2)
+    relevant_results = [result for result in results if result['score'] >= 0.5]
+    if len(relevant_results) > 0:
+        unique_results = remove_duplicate_results(relevant_results)
+        response = create_response(query, unique_results)
+    else:
+        return "No Relevant Results to Question. Try Another Topic."
     return response
