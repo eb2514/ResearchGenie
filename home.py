@@ -273,10 +273,25 @@ def get_placeholder_logo(text="RG", size=(150, 150), bg_color="#7B44F2", text_co
     return img_byte_arr.getvalue()
 
 # Header section with logo and navigation
-col1, col2, col3 = st.columns([1, 2, 3])
-with col1:
-    #st.image("researchgenielogo.jpg", width=80)
-            st.markdown(
+# col1, col2, col3 = st.columns([1, 2, 3])
+# with col1:
+#     st.image("researchgenielogo.jpg", width=80)
+# with col2:
+#     st.markdown('<div style="padding-top: 10px;"><span style="font-size: 1.5rem; font-weight: 700; color: #8B4513;">ResearchGenie</span></div>', unsafe_allow_html=True)
+# with col3:
+#     st.markdown("""
+#     <div style="display: flex; justify-content: flex-end; padding-top: 10px;">
+#         <a href="/home" class="nav-link">Home</a>
+#         <a href="/search" class="nav-link">Search</a>
+#         <a href="/news" class="nav-link">News</a>
+#         <a href="/more" class="nav-link">More</a>
+#     </div>
+#     """, unsafe_allow_html=True)
+
+with st.container():
+    col1, col2 = st.columns([1, 3])  # Adjust column widths
+    with col1:
+        st.markdown(
             """
             <style>
                 .header-container {
@@ -309,17 +324,24 @@ with col1:
             """,
             unsafe_allow_html=True,
         )
-with col2:
-    st.markdown('<div style="padding-top: 10px;"><span style="font-size: 1.5rem; font-weight: 700; color: #8B4513;">ResearchGenie</span></div>', unsafe_allow_html=True)
-with col3:
-    st.markdown("""
-    <div style="display: flex; justify-content: flex-end; padding-top: 10px;">
-        <a href="/home" class="nav-link">Home</a>
-        <a href="/search" class="nav-link">Search</a>
-        <a href="/news" class="nav-link">News</a>
-        <a href="/more" class="nav-link">More</a>
-    </div>
-    """, unsafe_allow_html=True)
+    with col2:
+        st.markdown(
+            """
+            <style>
+                nav {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+            </style>
+            <nav>
+                <a href="/home" target="_self">Home</a>
+                <a href="/about" target="_self">About</a>
+                <a href="/contact" target="_self">Contact</a>
+            </nav>
+            """,
+            unsafe_allow_html=True,
+        )
 
 # Hero section
 st.markdown("""
