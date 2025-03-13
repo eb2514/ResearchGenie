@@ -39,6 +39,7 @@ st.markdown("""
         font-weight: 700 !important;
         color: var(--text-primary) !important;
         margin-bottom: 0.5rem !important;
+        background-color: var(--accent-color)
     }
     
     .sub-header {
@@ -137,7 +138,7 @@ st.markdown("""
     }
     
     .hero-section {
-        background-color: var(--accent-color) !important;
+        background-color: var(--background-light) !important;
         color: var(--text-primary) !important;
         padding: 2rem !important;
         text-align: center !important;
