@@ -39,7 +39,7 @@ st.markdown("""
         font-weight: 700 !important;
         color: var(--text-primary) !important;
         margin-bottom: 0.5rem !important;
-        background-color: var(--accent-color)
+        background-color: var(--accent-color);
     }
     
     .sub-header {
