@@ -275,7 +275,40 @@ def get_placeholder_logo(text="RG", size=(150, 150), bg_color="#7B44F2", text_co
 # Header section with logo and navigation
 col1, col2, col3 = st.columns([1, 2, 3])
 with col1:
-    st.image("researchgenielogo.jpg", width=80)
+    #st.image("researchgenielogo.jpg", width=80)
+            st.markdown(
+            """
+            <style>
+                .header-container {
+                    background-color: #a29bfe; /* Replace with a suitable color from your website */
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .logo {
+                    display: flex;
+                    align-items: center;
+                }
+                .logo img {
+                    margin-right: 10px; /* Adjust spacing between logo and name */
+                }
+                nav a {
+                    color: #fff; /* Adjust link color */
+                    text-decoration: none;
+                    margin-left: 15px;
+                }
+                nav a:hover {
+                    text-decoration: underline;
+                }
+            </style>
+            <div class="logo">
+                <img src="researchgenielogo.jpg" alt="ResearchGenie Logo" width="80">
+                <h1>ResearchGenie</h1>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 with col2:
     st.markdown('<div style="padding-top: 10px;"><span style="font-size: 1.5rem; font-weight: 700; color: #8B4513;">ResearchGenie</span></div>', unsafe_allow_html=True)
 with col3:
