@@ -137,7 +137,7 @@ st.markdown("""
     }
     
     .hero-section {
-        background-color: var(accent-color) !important;
+        background-color: var(--accent-color) !important;
         color: var(--text-primary) !important;
         padding: 2rem !important;
         text-align: center !important;
