@@ -277,8 +277,8 @@ col1, col2, col3 = st.columns([1,3])
 with col1:
     st.image("researchgenielogo.jpg", width=80)
     st.markdown('<div style="padding-top: 10px;"><span style="font-size: 1.5rem; font-weight: 700; color: #8B4513;">ResearchGenie</span></div>', unsafe_allow_html=True)
-# with col2:
-#     st.markdown('<div style="padding-top: 10px;"><span style="font-size: 1.5rem; font-weight: 700; color: #8B4513;">ResearchGenie</span></div>', unsafe_allow_html=True)
+with col2:
+    st.markdown('<div style="padding-top: 10px;"><span style="font-size: 1.5rem; font-weight: 700; color: #8B4513;">ResearchGenie</span></div>', unsafe_allow_html=True)
 with col3:
     st.markdown("""
     <div style="display: flex; justify-content: flex-end; padding-top: 10px;">
