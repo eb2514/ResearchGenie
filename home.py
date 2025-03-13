@@ -742,8 +742,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Hero image
-st.image("/api/placeholder/800/400", use_column_width=True)
-
+# st.image("/api/placeholder/800/400", use_column_width=True)
+# st.image("", use_column_width=True)
 # Mission section
 st.markdown("<br>", unsafe_allow_html=True)
 st.markdown('<h2 class="sub-header">Our Mission</h2>', unsafe_allow_html=True)
