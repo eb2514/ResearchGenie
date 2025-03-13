@@ -276,7 +276,6 @@ def get_placeholder_logo(text="RG", size=(150, 150), bg_color="#7B44F2", text_co
 col1, col2, col3 = st.columns([1,2,3])
 with col1:
     st.image("researchgenielogo.jpg", width=80)
-    st.markdown('<div style="padding-top: 10px;"><span style="font-size: 1.5rem; font-weight: 700; color: #8B4513;">ResearchGenie</span></div>', unsafe_allow_html=True)
 with col2:
     st.markdown('<div style="padding-top: 10px;"><span style="font-size: 1.5rem; font-weight: 700; color: #8B4513;">ResearchGenie</span></div>', unsafe_allow_html=True)
 with col3:
