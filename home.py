@@ -317,7 +317,7 @@ st.markdown(f"""
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-        margin-top: 80px;
+        margin-top: -75px;
         margin-bottom: 30px;
         display: flex;
         align-items: center;
