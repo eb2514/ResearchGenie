@@ -311,13 +311,13 @@ st.markdown(f"""
     .full-width-header {{
         background-color: #8B4513;
         padding: 15px 0;
-        width: 102vw;
+        width: 100%;
         position: relative;
         left: 50%;
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-        margin-top: -80px;
+        margin-top: 80px;
         margin-bottom: 30px;
         display: flex;
         align-items: center;
