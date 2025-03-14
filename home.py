@@ -27,6 +27,7 @@ st.markdown("""
     .stApp {
         background-color: var(--background-light);
         color: var(--text-primary);
+        width: 100vw;
     }
     
     /* Make content stand out against Streamlit's background */
