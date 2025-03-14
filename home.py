@@ -290,18 +290,21 @@ def get_placeholder_logo(text="RG", size=(150, 150), bg_color="#7B44F2", text_co
 
 
 st.markdown("""
-<div style="background-color: #8B4513; padding: 10px; display: flex; align-items: center; border-radius: 8px;">
-    <div style="display: flex; align-items: center;">
-        <img src="researchgenielogo.jpg" width="80" style="margin-right: 10px;">
-        <span style="font-size: 1.5rem; font-weight: 700; color: white;">ResearchGenie</span>
+<div style="background-color: #8B4513; padding: 15px; display: flex; align-items: center; width: 100%; margin-top: -80px; margin-bottom: 20px; position: relative; left: 50%; transform: translateX(-50%); max-width: 100vw;">
+    <div style="display: flex; align-items: center; margin-left: 20px;">
+        <img src="researchgenielogo.jpg" width="80" style="margin-right: 15px;">
+        <span style="font-size: 1.8rem; font-weight: 700; color: white;">ResearchGenie</span>
     </div>
-    <div style="margin-left: auto;">
-        <a href="#" onclick="return false;" class="nav-link" style="color: white;">Home</a>
-        <a href="#" onclick="return false;" class="nav-link" style="color: white;">Search</a>
-        <a href="#" onclick="return false;" class="nav-link" style="color: white;">News</a>
-        <a href="#" onclick="return false;" class="nav-link" style="color: white;">More</a>
+    <div style="margin-left: auto; margin-right: 30px;">
+        <a href="#" onclick="return false;" class="nav-link" style="color: white !important; margin-left: 20px; font-weight: 500; text-decoration: none;">Home</a>
+        <a href="#" onclick="return false;" class="nav-link" style="color: white !important; margin-left: 20px; font-weight: 500; text-decoration: none;">Search</a>
+        <a href="#" onclick="return false;" class="nav-link" style="color: white !important; margin-left: 20px; font-weight: 500; text-decoration: none;">News</a>
+        <a href="#" onclick="return false;" class="nav-link" style="color: white !important; margin-left: 20px; font-weight: 500; text-decoration: none;">More</a>
     </div>
 </div>
+
+<!-- Add some space after the header -->
+<div style="margin-top: 20px;"></div>
 """, unsafe_allow_html=True)
 
 # Hero section
