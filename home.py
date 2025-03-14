@@ -247,32 +247,32 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Create a placeholder for your logo
-def get_placeholder_logo(text="RG", size=(150, 150), bg_color="#7B44F2", text_color="white"):
-    from PIL import Image, ImageDraw, ImageFont
-    import io
+# def get_placeholder_logo(text="RG", size=(150, 150), bg_color="#7B44F2", text_color="white"):
+#     from PIL import Image, ImageDraw, ImageFont
+#     import io
     
-    # Create a new image with the specified background color
-    img = Image.new('RGB', size, color=bg_color)
-    draw = ImageDraw.Draw(img)
+#     # Create a new image with the specified background color
+#     img = Image.new('RGB', size, color=bg_color)
+#     draw = ImageDraw.Draw(img)
     
-    # Use a default font since custom fonts might not be available
-    try:
-        font = ImageFont.truetype("Arial", size[0] // 2)
-    except IOError:
-        font = ImageFont.load_default()
+#     # Use a default font since custom fonts might not be available
+#     try:
+#         font = ImageFont.truetype("Arial", size[0] // 2)
+#     except IOError:
+#         font = ImageFont.load_default()
     
-    text_width, text_height = draw.textsize(text, font=font) if hasattr(draw, 'textsize') else (size[0]//3, size[1]//3)
-    position = ((size[0] - text_width) // 2, (size[1] - text_height) // 2)
+#     text_width, text_height = draw.textsize(text, font=font) if hasattr(draw, 'textsize') else (size[0]//3, size[1]//3)
+#     position = ((size[0] - text_width) // 2, (size[1] - text_height) // 2)
     
-    draw.text(position, text, fill=text_color, font=font)
+#     draw.text(position, text, fill=text_color, font=font)
     
-    img_byte_arr = io.BytesIO()
-    img.save(img_byte_arr, format='PNG')
-    img_byte_arr.seek(0)
+#     img_byte_arr = io.BytesIO()
+#     img.save(img_byte_arr, format='PNG')
+#     img_byte_arr.seek(0)
     
-    return img_byte_arr.getvalue()
+#     return img_byte_arr.getvalue()
 
-#Header section with logo and navigation
+# Header section with logo and navigation
 # col1, col2, col3 = st.columns([1,2,3])
 # with col1:
 #     st.image("researchgenielogo.jpg", width=80)
@@ -289,23 +289,107 @@ def get_placeholder_logo(text="RG", size=(150, 150), bg_color="#7B44F2", text_co
 #     """, unsafe_allow_html=True)
 
 
-st.markdown("""
-<div style="background-color: #8B4513; padding: 15px; display: flex; align-items: center; width: 100%; margin-top: -80px; margin-bottom: 20px; position: relative; left: 50%; transform: translateX(-50%); max-width: 100vw;">
-    <div style="display: flex; align-items: center; margin-left: 20px;">
-        <img src="researchgenielogo.jpg" width="80" style="margin-right: 15px;">
+logo_image = "researchgenielogo.jpg"
+# Display it here but hide it later
+logo_placeholder = st.empty()
+logo_placeholder.image(logo_image, width=1)
+# Now hide it since we'll show it in our custom header
+logo_placeholder.empty()
+
+# Full-width header with guaranteed white text and proper logo
+st.markdown(f"""
+<style>
+    /* Override any conflicting styles for navigation links */
+    .nav-link {{
+        color: white !important;
+        font-weight: 500 !important;
+        margin-left: 20px !important;
+        text-decoration: none !important;
+    }}
+    
+    /* Full-width container that breaks out of Streamlit's default layout */
+    .full-width-header {{
+        background-color: #8B4513;
+        padding: 15px 0;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-top: -80px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+    }}
+    
+    /* Container for logo and site name */
+    .logo-container {{
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+    }}
+    
+    /* Navigation container */
+    .nav-container {{
+        margin-left: auto;
+        margin-right: 40px;
+    }}
+</style>
+
+<div class="full-width-header">
+    <div class="logo-container">
+        <img src="data:image/jpg;base64,{st.session_state.get('logo_base64', '')}" width="50" style="margin-right: 15px;">
         <span style="font-size: 1.8rem; font-weight: 700; color: white;">ResearchGenie</span>
     </div>
-    <div style="margin-left: auto; margin-right: 30px;">
-        <a href="#" onclick="return false;" class="nav-link" style="color: white !important; margin-left: 20px; font-weight: 500; text-decoration: none;">Home</a>
-        <a href="#" onclick="return false;" class="nav-link" style="color: white !important; margin-left: 20px; font-weight: 500; text-decoration: none;">Search</a>
-        <a href="#" onclick="return false;" class="nav-link" style="color: white !important; margin-left: 20px; font-weight: 500; text-decoration: none;">News</a>
-        <a href="#" onclick="return false;" class="nav-link" style="color: white !important; margin-left: 20px; font-weight: 500; text-decoration: none;">More</a>
+    <div class="nav-container">
+        <a href="#" onclick="return false;" class="nav-link">Home</a>
+        <a href="#" onclick="return false;" class="nav-link">Search</a>
+        <a href="#" onclick="return false;" class="nav-link">News</a>
+        <a href="#" onclick="return false;" class="nav-link">More</a>
     </div>
 </div>
 
 <!-- Add some space after the header -->
 <div style="margin-top: 20px;"></div>
 """, unsafe_allow_html=True)
+
+# For the logo to work in custom HTML, we need to convert it to base64
+# Add this at the beginning of your script, before the header code
+import base64
+from PIL import Image
+import io
+
+# Function to convert image to base64
+def get_image_as_base64(file_path):
+    try:
+        img = Image.open(file_path)
+        buffered = io.BytesIO()
+        img.save(buffered, format="JPEG")
+        return base64.b64encode(buffered.getvalue()).decode()
+    except Exception:
+        # If the file doesn't exist, create a placeholder
+        return get_placeholder_logo_base64()
+
+# Function to create a placeholder logo as base64
+def get_placeholder_logo_base64():
+    # Create a placeholder brown square with "RG" text
+    img = Image.new('RGB', (100, 100), color="#8B4513")
+    draw = ImageDraw.Draw(img)
+    try:
+        font = ImageFont.truetype("Arial", 40)
+    except IOError:
+        font = ImageFont.load_default()
+    
+    draw.text((30, 30), "RG", fill="white", font=font)
+    
+    buffered = io.BytesIO()
+    img.save(buffered, format="JPEG")
+    return base64.b64encode(buffered.getvalue()).decode()
+
+# Store the base64 image in session state so it's accessible in the markdown
+if 'logo_base64' not in st.session_state:
+    st.session_state.logo_base64 = get_image_as_base64("researchgenielogo.jpg")
 
 # Hero section
 st.markdown("""
