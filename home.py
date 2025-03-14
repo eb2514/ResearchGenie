@@ -343,10 +343,10 @@ st.markdown(f"""
         <span style="font-size: 1.8rem; font-weight: 700; color: white;">ResearchGenie</span>
     </div>
     <div class="nav-container">
-        <a href="#" onclick="return false;" class="nav-link">Home</a>
-        <a href="#" onclick="return false;" class="nav-link">Search</a>
-        <a href="#" onclick="return false;" class="nav-link">News</a>
-        <a href="#" onclick="return false;" class="nav-link">More</a>
+        <a href="/home" onclick="return false;" class="nav-link">Home</a>
+        <a href="/search" onclick="return false;" class="nav-link">Search</a>
+        <a href="/news" onclick="return false;" class="nav-link">News</a>
+        <a href="/more" onclick="return false;" class="nav-link">More</a>
     </div>
 </div>
 
