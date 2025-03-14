@@ -311,7 +311,7 @@ st.markdown(f"""
     .full-width-header {{
         background-color: #8B4513;
         padding: 15px 0;
-        width: 100%;
+        width: 102vw;
         position: relative;
         left: 50%;
         right: 50%;
