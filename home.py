@@ -27,7 +27,6 @@ st.markdown("""
     .stApp {
         background-color: var(--background-light);
         color: var(--text-primary);
-        width: 200vw;
     }
     
     /* Make content stand out against Streamlit's background */
@@ -312,7 +311,7 @@ st.markdown(f"""
     .full-width-header {{
         background-color: #8B4513;
         padding: 15px 0;
-        width: 100vw;
+        width: 120%;
         position: relative;
         left: 50%;
         right: 50%;
