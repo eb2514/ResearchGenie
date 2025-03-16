@@ -392,7 +392,18 @@ for i, col in enumerate(cols):
         """, unsafe_allow_html=True)
 
 # Sign-Up Form Section
-#st.markdown
+st.markdown("""
+<div class="subscribe-section">
+    <h2 class="subscribe-title">Join Our Research Community</h2>
+    <p class="subscribe-subtitle">
+        Stay informed about the latest updates, research trends, and news from ResearchGenie!
+    </p>
+    <div class="subscribe-form">
+        <input type="email" placeholder="Your email address" class="subscribe-input">
+        <button class="subscribe-button">Subscribe</button>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("""
 <div class="stat-section">
