@@ -302,17 +302,17 @@ with st.container():
 st.markdown('</div>', unsafe_allow_html=True) # Close the updates container
 
 # Footer with the same style as home page
-st.markdown("""
-<div class="footer-dark">
-    <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
-        <a href="/home" class="footer-link">Home</a>
-        <a href="/search" class="footer-link">Search</a>
-        <a href="/news" class="footer-link">News</a>
-        <a href="/more" class="footer-link">More</a>
-    </div>
-    <div style="text-align: center;">
-        <div style="font-weight: 600; color: var(--accent-color); margin-bottom: 0.5rem;">ResearchGenie</div>
-        <p style="color: var
+# st.markdown("""
+# <div class="footer-dark">
+#     <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+#         <a href="/home" class="footer-link">Home</a>
+#         <a href="/search" class="footer-link">Search</a>
+#         <a href="/news" class="footer-link">News</a>
+#         <a href="/more" class="footer-link">More</a>
+#     </div>
+#     <div style="text-align: center;">
+#         <div style="font-weight: 600; color: var(--accent-color); margin-bottom: 0.5rem;">ResearchGenie</div>
+#         <p style="color: var
 
 # import streamlit as st
 
