@@ -3,7 +3,7 @@ from PIL import Image
 import base64
 import io
 
-st.session_state.show_sidebar = True
+st.session_state.show_sidebar = False
 # Custom CSS for modern styling to match home page with cream/light-brown background and brown accents
 st.markdown("""
 <style>
