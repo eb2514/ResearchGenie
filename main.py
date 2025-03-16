@@ -16,4 +16,4 @@ st.set_page_config(page_title="My App",page_icon="🧞‍♂️", layout="wide")
 #     st.Page("news.py", title="News",  icon="🧞‍♂️"),
 #     ])
 
-pg.run()
+st.run()
