@@ -468,41 +468,25 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Statistics section
-st.markdown("""
-<div class="stat-section">
-    <h2 class="sub-header">ResearchGenie in Numbers</h2>
-    <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
-        <div class="stat-card">
-            <h3 class="stat-number">1 Million +</h3>
-            <p class="stat-label">Research Papers</p>
-        </div>
-        <div class="stat-card">
-            <h3 class="stat-number">50 Thousand +</h3>
-            <p class="stat-label">Researchers</p>
-        </div>
-        <div class="stat-card">
-            <h3 class="stat-number">100 +</h3>
-            <p class="stat-label">Universities</p>
-        </div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# Footer
-st.markdown("""
-<div class="footer-dark">
-    <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
-        <a href="/home" class="footer-link">Home</a>
-        <a href="/search" class="footer-link">Search</a>
-        <a href="/news" class="footer-link">News</a>
-        <a href="/more" class="footer-link">More</a>
-    </div>
-    <div style="text-align: center;">
-        <div style="font-weight: 600; color: var(--accent-color); margin-bottom: 0.5rem;">ResearchGenie</div>
-        <p class="copyright">© 2025 ResearchGenie. All rights reserved.</p>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+# st.markdown("""
+# <div class="stat-section">
+#     <h2 class="sub-header">ResearchGenie in Numbers</h2>
+#     <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
+#         <div class="stat-card">
+#             <h3 class="stat-number">1 Million +</h3>
+#             <p class="stat-label">Research Papers</p>
+#         </div>
+#         <div class="stat-card">
+#             <h3 class="stat-number">50 Thousand +</h3>
+#             <p class="stat-label">Researchers</p>
+#         </div>
+#         <div class="stat-card">
+#             <h3 class="stat-number">100 +</h3>
+#             <p class="stat-label">Universities</p>
+#         </div>
+#     </div>
+# </div>
+# """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class="stat-section">
@@ -544,3 +528,22 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
+
+# Footer
+st.markdown("""
+<div class="footer-dark">
+    <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+        <a href="/home" class="footer-link">Home</a>
+        <a href="/search" class="footer-link">Search</a>
+        <a href="/news" class="footer-link">News</a>
+        <a href="/more" class="footer-link">More</a>
+    </div>
+    <div style="text-align: center;">
+        <div style="font-weight: 600; color: var(--accent-color); margin-bottom: 0.5rem;">ResearchGenie</div>
+        <p class="copyright">© 2025 ResearchGenie. All rights reserved.</p>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+
