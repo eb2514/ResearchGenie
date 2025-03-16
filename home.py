@@ -467,26 +467,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Statistics section
-# st.markdown("""
-# <div class="stat-section">
-#     <h2 class="sub-header">ResearchGenie in Numbers</h2>
-#     <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
-#         <div class="stat-card">
-#             <h3 class="stat-number">1 Million +</h3>
-#             <p class="stat-label">Research Papers</p>
-#         </div>
-#         <div class="stat-card">
-#             <h3 class="stat-number">50 Thousand +</h3>
-#             <p class="stat-label">Researchers</p>
-#         </div>
-#         <div class="stat-card">
-#             <h3 class="stat-number">100 +</h3>
-#             <p class="stat-label">Universities</p>
-#         </div>
-#     </div>
-# </div>
-# """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class="stat-section">
