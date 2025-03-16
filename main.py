@@ -16,4 +16,4 @@ pg = st.navigation([
     st.Page("news.py", title="News",  icon="🧞‍♂️"),
     ])
 
-st.run()
+pg.run()
