@@ -503,3 +503,44 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
+st.markdown("""
+<div class="stat-section">
+    <h2 class="sub-header">ResearchGenie in Numbers</h2>
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+        <div class="stat-card" style="flex: 1; min-width: 0;">
+            <h3 class="stat-number">1 Million +</h3>
+            <p class="stat-label">Research Papers</p>
+        </div>
+        <div class="stat-card" style="flex: 1; min-width: 0;">
+            <h3 class="stat-number">50 Thousand +</h3>
+            <p class="stat-label">Researchers</p>
+        </div>
+        <div class="stat-card" style="flex: 1; min-width: 0;">
+            <h3 class="stat-number">100 +</h3>
+            <p class="stat-label">Universities</p>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# You may also want to update the stat-card class in your CSS section:
+st.markdown("""
+<style>
+    /* Updated stat card style with more compact design */
+    .stat-card {
+        background-color: var(--card-bg) !important;
+        border-radius: 10px !important;
+        padding: 1.25rem 1rem !important; /* Reduced padding */
+        text-align: center !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+        margin: 0 !important; /* Remove any default margins */
+    }
+    
+    /* Ensure stat section has proper spacing */
+    .stat-section {
+        background-color: var(--background-light) !important;
+        padding: 2rem 0 !important; /* Slightly reduced vertical padding */
+    }
+</style>
+""", unsafe_allow_html=True)
