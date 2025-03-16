@@ -10,10 +10,10 @@ st.markdown("""
             <style>    
             """, unsafe_allow_html=True)
 
-pg = st.navigation("ResearchGenie" : [
+pg = st.navigation({"ResearchGenie" : [
     st.Page("home.py", title="Home",  icon="🧞‍♂️"),
     st.Page("search.py", title="Search", icon="🧞‍♂️"),
     st.Page("news.py", title="News",  icon="🧞‍♂️"),
-    ])
+    ]})
 
 pg.run()
