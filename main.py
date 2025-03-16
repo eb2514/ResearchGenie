@@ -10,10 +10,10 @@ st.set_page_config(page_title="My App",page_icon="🧞‍♂️", layout="wide")
 #             <style>    
 #             """, unsafe_allow_html=True)
 
-pg = st.navigation([
-    st.Page("home.py", title="Home",  icon="🧞‍♂️"),
-    st.Page("search.py", title="Search", icon="🧞‍♂️"),
-    st.Page("news.py", title="News",  icon="🧞‍♂️"),
-    ])
+# pg = st.navigation([
+#     st.Page("home.py", title="Home",  icon="🧞‍♂️"),
+#     st.Page("search.py", title="Search", icon="🧞‍♂️"),
+#     st.Page("news.py", title="News",  icon="🧞‍♂️"),
+#     ])
 
 pg.run()
