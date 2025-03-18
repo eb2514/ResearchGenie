@@ -57,6 +57,31 @@ def create_response(query, unique_results):
             break
     return crafted_response
     
+# def query_chroma(query):
+#     # Initialize the Chroma store
+#     embedding_model = HuggingFaceEmbeddings(
+#     model_name="sentence-transformers/all-MiniLM-L6-v2")
+#     print("Communicating with server")
+#     client = chromadb.HttpClient(host=st.secrets['ADDRESS'], port=443, ssl=True)
+#     print("Communicating with server")
+#     chroma_store = Chroma(client=client, embedding_function=embedding_model, collection_name="my_collection")
+#     print("Communicating with server")
+
+#     # Query the database
+#     print(f"Querying for: '{query}'")
+#     results = chroma_store.similarity_search(query, k=3)
+#     #st.write(results)
+#     #relevant_results = [result for result in results if result[1] >= 0.5]
+#     #documents = [result[0] for result in relevant_results]
+#     #if len(relevant_results) > 1:
+#     unique_results = remove_duplicate_results(results)
+#     response = create_response(query, unique_results)
+#     # else:
+#     #     return "No Relevant Results to Question. Try Another Topic."
+#     return response
+
+
+
 def query_chroma(query):
     # Initialize the Chroma store
     embedding_model = HuggingFaceEmbeddings(
@@ -69,13 +94,14 @@ def query_chroma(query):
 
     # Query the database
     print(f"Querying for: '{query}'")
-    results = chroma_store.similarity_search(query, k=2)
+    results = chroma_store.similarity_search(query, k=3)
     #st.write(results)
-    #relevant_results = [result for result in results if result[1] >= 0.5]
-    #documents = [result[0] for result in relevant_results]
-    #if len(relevant_results) > 1:
-    unique_results = remove_duplicate_results(results)
-    response = create_response(query, unique_results)
-    # else:
-    #     return "No Relevant Results to Question. Try Another Topic."
+    relevant_results = [result for result in results if result[1] >= 0.5]
+    documents = [doc for doc, _ in relevant_results]
+    st.write(documents)
+    if len(relevant_results) > 1:
+        unique_results = remove_duplicate_results(documents)
+        response = create_response(query, unique_results)
+    else:
+        return "No Relevant Results to Question. Try Another Topic."
     return response
