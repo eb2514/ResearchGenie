@@ -71,7 +71,7 @@ def query_chroma(query):
     print(f"Querying for: '{query}'")
     results = chroma_store.similarity_search_with_relevance_scores(query, k=2)
     st.write(results)
-    relevant_results = [result for result in results if result['score'] >= 0.5]
+    relevant_results = [result for result in results if result[1] >= 0.5]
     #documents = [result[0] for result in relevant_results]
     if len(relevant_results) > 1:
         unique_results = remove_duplicate_results(relevant_results)
