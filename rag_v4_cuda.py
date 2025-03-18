@@ -47,7 +47,7 @@ def create_response(query, unique_results):
             st.write(file_url)
     response += get_response(query, send_context)
     response = response.split("<----------DELIMITER---------->")
-    st.write(response)
+    #st.write(response)
     # st.write(len(pdf_list))
     for i in range(0,len(response)):
         try:
@@ -70,7 +70,7 @@ def query_chroma(query):
     # Query the database
     print(f"Querying for: '{query}'")
     results = chroma_store.similarity_search_with_relevance_scores(query, k=2)
-    st.write(results)
+    #st.write(results)
     relevant_results = [result for result in results if result['score'] >= 0.5]
     if len(relevant_results) > 4:
         unique_results = remove_duplicate_results(relevant_results)
