@@ -70,7 +70,7 @@ def query_chroma(query):
     # Query the database
     print(f"Querying for: '{query}'")
     results = chroma_store.similarity_search(query, k=2)
-    st.write(results)
+    #st.write(results)
     #relevant_results = [result for result in results if result[1] >= 0.5]
     #documents = [result[0] for result in relevant_results]
     #if len(relevant_results) > 1:
