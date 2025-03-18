@@ -26,7 +26,7 @@ def remove_duplicate_results(results):
             unique_results.append(result)
     return unique_results
 
-def create_response(unique_results):
+def create_response(query, unique_results):
     crafted_response=[]
     pdf_list = []
     response = ""
