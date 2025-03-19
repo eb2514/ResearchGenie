@@ -321,7 +321,7 @@ st.markdown(f"""
 <div class="full-width-header">
     <div class="logo-container">
         <img src="data:image/jpg;base64,{st.session_state.get('logo_base64', '')}" width="50" style="margin-right: 15px;">
-        <span style="font-size: 1.8rem; font-weight: 700; color: white;">ResearchGenie</span>
+        <span style="font-size: 1.8rem; font-weight: 700; color: white;">ResearchGenie Beta</span>
     </div>
 </div>
 
