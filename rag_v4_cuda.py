@@ -94,7 +94,7 @@ def query_chroma(query):
 
     # Query the database
     print(f"Querying for: '{query}'")
-    results = chroma_store.similarity_search(query, k=3)
+    results = chroma_store.similarity_search_with_relevance_score(query, k=3)
     #st.write(results)
     relevant_results = [result for result in results if result[1] >= 0.5]
     st.write(relevant_results)
