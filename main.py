@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="My App",page_icon="🧞‍♂️", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="My App",page_icon="🧞‍♂️", layout="wide", initial_sidebar_state="auto")
 st.markdown(""" 
             <style>
             /* Set a fixed width for the sidebar */
